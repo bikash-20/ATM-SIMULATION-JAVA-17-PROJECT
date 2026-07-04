@@ -94,6 +94,8 @@ logic)
 ---
 
 ## 5. Project Structure
+
+```
 atm-simulation/
 ├── pom.xml
 ├── mvnw / mvnw.cmd
@@ -118,6 +120,7 @@ atm-simulation/
 │   │       └── templates/atm/                  # Thymeleaf views
 │   └── test/
 └── README.md
+```
 
 ---
 
