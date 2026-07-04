@@ -1,4 +1,5 @@
 # ATM Simulation System
+<img width="481" height="555" alt="image" src="https://github.com/user-attachments/assets/4ea0860f-4ca5-4421-b2f3-b5d05b392f58" />
 
 A full-stack banking simulation built with Spring Boot, demonstrating core
 Object-Oriented Programming principles through a realistic ATM workflow —
