@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Change PIN</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Change PIN</h2>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+    <form th:action="@{/atm/change-pin}" method="post">
+        <input type="hidden" name="accountNumber" th:value="${accountNumber}">
+        <label for="oldPin">Current PIN:</label>
+        <input type="password" id="oldPin" name="oldPin" maxlength="6" required>
+        <label for="newPin">New PIN:</label>
+        <input type="password" id="newPin" name="newPin" maxlength="6" required>
+        <label for="confirmNewPin">Confirm New PIN:</label>
+        <input type="password" id="confirmNewPin" name="confirmNewPin" maxlength="6" required>
+        <button type="submit">Update PIN</button>
+    </form>
+    <p class="links"><a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Back to Menu</a></p>
+</div>
+</body>
+</html>

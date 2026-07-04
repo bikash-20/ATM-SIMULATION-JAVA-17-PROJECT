@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Create Account</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <h2>Create New Account</h2>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+    <form th:action="@{/atm/create-account}" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" required>
+
+        <label for="pin">PIN (4-6 digits):</label>
+        <input type="password" id="pin" name="pin" maxlength="6" required>
+
+        <label for="confirmPin">Confirm PIN:</label>
+        <input type="password" id="confirmPin" name="confirmPin" maxlength="6" required>
+
+        <label for="initialBalance">Initial Deposit (optional):</label>
+        <input type="number" id="initialBalance" name="initialBalance" step="0.01" min="0">
+
+        <button type="submit">Create Account</button>
+    </form>
+    <p class="links"><a th:href="@{/atm/start}">Back to Start</a></p>
+</div>
+</body>
+</html>

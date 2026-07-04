@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Withdraw Success</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Withdrawal Successful</h2>
+    <p class="balance" th:text="${'Dispensed: $' + amount}"></p>
+
+    <p><strong>Cash Breakdown</strong></p>
+    <table class="breakdown-table">
+        <tr th:if="${breakdown.hundreds > 0}">
+            <td>$100 notes</td><td th:text="${breakdown.hundreds}"></td>
+        </tr>
+        <tr th:if="${breakdown.fifties > 0}">
+            <td>$50 notes</td><td th:text="${breakdown.fifties}"></td>
+        </tr>
+        <tr th:if="${breakdown.twenties > 0}">
+            <td>$20 notes</td><td th:text="${breakdown.twenties}"></td>
+        </tr>
+        <tr th:if="${breakdown.tens > 0}">
+            <td>$10 notes</td><td th:text="${breakdown.tens}"></td>
+        </tr>
+        <tr th:if="${breakdown.fives > 0}">
+            <td>$5 notes</td><td th:text="${breakdown.fives}"></td>
+        </tr>
+        <tr th:if="${breakdown.ones > 0}">
+            <td>$1 notes</td><td th:text="${breakdown.ones}"></td>
+        </tr>
+    </table>
+
+    <p class="links">
+        <a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Back to Menu</a> |
+        <a th:href="@{/atm/start}">Logout</a>
+    </p>
+</div>
+</body>
+</html>

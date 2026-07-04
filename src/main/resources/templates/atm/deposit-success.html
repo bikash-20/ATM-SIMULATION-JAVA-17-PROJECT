@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Deposit Success</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Deposit Successful</h2>
+    <p th:text="${'Deposited: $' + amount}"></p>
+    <p class="balance" th:text="${'New Balance: $' + newBalance}"></p>
+    <p class="links">
+        <a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Back to Menu</a> |
+        <a th:href="@{/atm/start}">Logout</a>
+    </p>
+</div>
+</body>
+</html>

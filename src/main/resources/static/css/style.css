@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #1b2735;
+    margin: 0;
+    padding: 40px 16px;
+    color: #222;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    margin: 0 0 4px 0;
+    font-size: 22px;
+    color: #16213e;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 4px;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 12px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 8px;
+    padding: 12px;
+    background: #16213e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f172a;
+}
+
+.error {
+    background: #ffe4e4;
+    color: #b00020;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.balance {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #16213e;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    display: block;
+    padding: 12px 14px;
+    background: #f4f6fb;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #16213e;
+    font-weight: 600;
+}
+
+ul li a:hover {
+    background: #e6e9f2;
+}
+
+.tx-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+.tx-table th, .tx-table td {
+    border: 1px solid #e2e2e2;
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.tx-table th {
+    background: #f4f6fb;
+}
+
+.breakdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.breakdown-table td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+p a {
+    color: #16213e;
+    font-weight: 600;
+}
+
+p.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.note {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-top: 12px;
+}
+
+canvas {
+    margin-top: 16px;
+}

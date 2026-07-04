@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - PIN</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <h2>Enter PIN</h2>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+    <form th:action="@{/atm/verify-pin}" method="post">
+        <input type="hidden" name="accountNumber" th:value="${accountNumber}">
+        <label for="pin">PIN:</label>
+        <input type="password" id="pin" name="pin" maxlength="6" required>
+        <button type="submit">Verify</button>
+    </form>
+    <p class="links"><a th:href="@{/atm/start}">Back</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Menu</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span> (Account: <span th:text="${accountNumber}"></span>)</p>
+    <h2>Main Menu</h2>
+    <ul>
+        <li><a th:href="@{/atm/balance(accountNumber=${accountNumber}, name=${name})}">Balance Inquiry</a></li>
+        <li><a th:href="@{/atm/deposit(accountNumber=${accountNumber}, name=${name})}">Deposit</a></li>
+        <li><a th:href="@{/atm/withdraw(accountNumber=${accountNumber}, name=${name})}">Withdraw</a></li>
+        <li><a th:href="@{/atm/history(accountNumber=${accountNumber}, name=${name})}">Transaction History</a></li>
+        <li><a th:href="@{/atm/change-pin(accountNumber=${accountNumber}, name=${name})}">Change PIN</a></li>
+        <li><a th:href="@{/atm/close-account(accountNumber=${accountNumber}, name=${name})}">Close Account</a></li>
+    </ul>
+    <p class="links"><a th:href="@{/atm/start}">Eject Card (Logout)</a></p>
+</div>
+</body>
+</html>

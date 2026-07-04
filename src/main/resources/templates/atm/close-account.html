@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Close Account</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Close Account</h2>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+    <p class="balance" th:text="${'Current Balance: $' + balance}"></p>
+    <p>This action cannot be undone. Type <strong>YES</strong> to confirm.</p>
+    <form th:action="@{/atm/close-account}" method="post">
+        <input type="hidden" name="accountNumber" th:value="${accountNumber}">
+        <label for="confirm">Type YES to confirm:</label>
+        <input type="text" id="confirm" name="confirm" required>
+        <button type="submit">Close Account</button>
+    </form>
+    <p class="links"><a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Cancel / Back to Menu</a></p>
+</div>
+</body>
+</html>

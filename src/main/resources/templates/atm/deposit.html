@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Deposit</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Deposit</h2>
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+    <form th:action="@{/atm/deposit}" method="post">
+        <input type="hidden" name="accountNumber" th:value="${accountNumber}">
+        <input type="hidden" name="name" th:value="${name}">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" step="0.01" min="0.01" required>
+        <button type="submit">Deposit</button>
+    </form>
+    <p class="links"><a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Back to Menu</a></p>
+</div>
+</body>
+</html>

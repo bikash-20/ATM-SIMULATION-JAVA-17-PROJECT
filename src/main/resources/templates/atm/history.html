@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - History</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <p>Welcome, <span th:text="${name}"></span></p>
+    <h2>Transaction History (last <span th:text="${limit}"></span>)</h2>
+
+    <table class="tx-table">
+        <thead>
+        <tr>
+            <th>Date &amp; Time</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Balance After</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="t : ${transactions}">
+            <td th:text="${#temporals.format(t.timestamp, 'yyyy-MM-dd HH:mm')}"></td>
+            <td th:text="${t.type}"></td>
+            <td th:text="${t.amount}"></td>
+            <td th:text="${t.balanceAfter}"></td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(transactions)}">
+            <td colspan="4">No transactions yet.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <canvas id="txChart" width="400" height="220"></canvas>
+
+    <p class="links">
+        <a th:href="@{/atm/pdf-statement(accountNumber=${accountNumber})}" target="_blank">Download PDF Statement</a>
+    </p>
+    <p class="links">
+        <a th:href="@{/atm/menu(accountNumber=${accountNumber}, name=${name})}">Back to Menu</a>
+    </p>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const ctx = document.getElementById('txChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [ [[${chartLabels}]] ],
+            datasets: [{
+                label: 'Amount ($) — deposits positive, withdrawals negative',
+                data: [ [[${chartAmounts}]] ],
+                backgroundColor: 'rgba(22, 33, 62, 0.7)'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+    /*]]>*/
+</script>
+</body>
+</html>

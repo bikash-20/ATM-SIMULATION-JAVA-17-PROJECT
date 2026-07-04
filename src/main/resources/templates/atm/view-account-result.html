@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Simulation - Account Details</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>ATM Simulation</h1>
+    <h2>Account Details</h2>
+    <p>Name: <strong th:text="${name}"></strong></p>
+    <p>Account Number: <strong th:text="${accountNumber}"></strong></p>
+    <p class="balance" th:text="${'Balance: $' + balance}"></p>
+    <p>Status: <strong th:text="${active} ? 'Active' : 'Closed'"></strong></p>
+    <p>Created: <span th:text="${#temporals.format(createdAt, 'yyyy-MM-dd HH:mm')}"></span></p>
+    <p class="links"><a th:href="@{/atm/start}">Back to Start</a></p>
+</div>
+</body>
+</html>
