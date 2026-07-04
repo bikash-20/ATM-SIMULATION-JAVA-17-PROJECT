@@ -5,7 +5,7 @@ Object-Oriented Programming principles through a realistic ATM workflow —
 account management, PIN-secured authentication, deposits, withdrawals,
 transaction history, and PDF statement generation.
 
-**Course:** [Your Course Code:  CSE 222  — Object-Oriented Programming]
+**Course:** [Course Code:  CSE 222  — Object-Oriented Programming]
 **Author:** Bikash Talukder
 **Submission Date:** [12-07-26]
 
